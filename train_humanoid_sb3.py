@@ -190,7 +190,7 @@ def resume_train(
 
 if __name__ == "__main__":
     # IMPORTANT on Windows/macOS: SubprocVecEnv must be created under this guard.
-    # main_train()
+    main_train()
 
     # To continue training instead of starting fresh:
-    resume_train(total_timesteps=1_000_000)
+    # resume_train(total_timesteps=1_000_000)
