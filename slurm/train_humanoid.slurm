@@ -11,13 +11,9 @@
 #SBATCH --error=/nesi/project/uoa04480/rl_agent_training_example/slurm_logs/%x_%j.err
 
 module purge
-module load Miniforge3
-source "$(conda info --base)/etc/profile.d/conda.sh"
+module load Python/3.11.3-gimkl-2022a
+source /nesi/project/uoa04480/myenv/bin/activate
 export PYTHONNOUSERSITE=1
-
-# Create this environment once on a NeSI login node before submitting.
-CONDA_ENV="/nesi/project/uoa04480/${USER}/conda_envs/humanoid-rl"
-conda activate "${CONDA_ENV}"
 
 # Prevent each subprocess from starting additional BLAS/OpenMP thread pools.
 export OMP_NUM_THREADS=1
